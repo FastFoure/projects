@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 1rem 3.5rem 1rem;
+    width: calc(100% - $sidebar-width);
+    height: 30px;
+    background-color: rgb(238, 226, 217);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: $z-index-header;
+}
+
+.header__right {
+    display: flex;
+    justify-content: space-between;
+}

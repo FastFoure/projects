@@ -1,0 +1,31 @@
+@import "vars";
+@import "vendor/reset.scss";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $white;
+    font-family: 'Alegreya', serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: $black;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+// Blocks
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/sidebar.scss";
+@import "blocks/main.scss";
+@import "blocks/container.scss";
+@import "blocks/nav.scss";
+@import "blocks/content.scss";
+@import "blocks/search.scss";
+@import "blocks/market.scss";

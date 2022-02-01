@@ -1,0 +1,31 @@
+.sidebar {
+    width: $sidebar-width;
+    height: 100vh;
+    background-color: rgb(182, 171, 171);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-sidebar;
+}
+
+.sidebar__img {
+    display: block;
+    margin: 1rem auto;
+    width: 12rem;
+    height: 12rem;
+    border: 2px solid $white;
+    border-radius: 50%;
+}
+
+.sidebar__nav {
+    margin: 5rem 2rem;
+    color: $white;
+    font-weight: 600;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.sidebar__link {
+    text-decoration: none;
+    color: $white;
+}
