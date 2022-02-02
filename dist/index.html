@@ -21,17 +21,24 @@
         <!-- Header -->
         <header class="header">
             <div class="header__left">
-                <a class="market__name" href="#">Название маркетплейса</a>
-            </div>
-            <div class="header__right">
-                <form class="search" action="/" method="post">
+                <div class="search">
                     <input class="search__input" type="search" placeholder="Введите запрос">
                     <button class="btn" type="submit">Поиск</button>
-                </form>
+                </div>
+                <button class="burger" type="button" id="sidebarToggle">
+                    <span>Открыть навигацию</span>
+                </button>
+            </div>
+            <div class="header__right">
                 <nav class="nav">
                     <a class="nav__link" href="#">Обратная связь</a>
-                    <a class="nav__link" href="#">Регистрация</a>
-                    <a class="nav__link" href="#">Личный кабинет</a>
+                    <a class="nav__link" href="signup.html">Регистрация</a>
+                    <a class="nav__link" href="#">
+                        <img src="../assets/images/avatar.svg" alt="Cabinet">
+                    </a>
+                    <a class="nav__link" href="#">
+                        <img src="../assets/images/cart.svg" alt="Cabinet">
+                    </a>
                 </nav>
             </div>
         </header>
@@ -40,20 +47,27 @@
         <aside class="sidebar">
             <div class="sidebar__header">
                 <img class="sidebar__img" src="https://via.placeholder.com/120" alt="">
+                <a class="sidebar__name" href="#">Название</a>
             </div>
             <div class="sidebar__content">
                 <ul class="sidebar__nav">
-                    <a class="sidebar__link" href="#">Категории</a>
-                    <li>Для дома
-                        <ul>
+                    <li class="sidebar__nav-item">
+                        <a class="sidebar__link" href="#">Категории</a>
+        
+                        <ul class="subnav">
                             <li>
-                                1
+                                <a class="subnav__link" href="#">Бытовая техника</a>
+                            </li>
+                            <li>
+                                <a class="subnav__link" href="#">Телефоны и аксессуары</a>
+                            </li>
+                            <li>
+                                <a class="subnav__link" href="#">Компьютеры и комплектующие</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="sidebar__footer"></div>
         </aside>
         <!-- Main -->
         <main class="main">

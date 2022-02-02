@@ -384,19 +384,42 @@ body {
 
 .page {
   overflow: hidden;
+  background-color: #fff;
+}
+
+.page__title {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-size: 2.1rem;
+  text-align: center;
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem 1rem 3.5rem 1rem;
   width: calc(100% - 250px);
-  height: 30px;
+  height: 3rem;
   background-color: #eee2d9;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1000;
+  box-shadow: 0px 10px 16px -8px rgba(137, 86, 63, 0.3);
+}
+@media (max-width: 991px) {
+  .header {
+    width: 100%;
+  }
+}
+
+.header__left {
+  padding-left: 2rem;
+}
+@media (max-width: 991px) {
+  .header__left {
+    padding-left: 6rem;
+  }
 }
 
 .header__right {
@@ -412,55 +435,119 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 4px 4px 16px -6px rgba(79, 44, 28, 0.4);
+}
+@media (max-width: 991px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    overflow: auto;
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    transform: translateX(-100%);
+    transition: transform 0.2s linear;
+  }
+  .show-sidebar .sidebar {
+    transform: translateX(0);
+  }
+}
+
+.sidebar__header {
+  flex-direction: column;
+  text-align: center;
 }
 
 .sidebar__img {
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto;
   width: 12rem;
   height: 12rem;
   border: 2px solid #fff;
   border-radius: 50%;
 }
 
+.sidebar__name {
+  color: #111111;
+  text-decoration: none;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  opacity: 0.8;
+}
+@media (max-width: 991px) {
+  .sidebar__name {
+    display: none;
+  }
+}
+
 .sidebar__nav {
-  margin: 5rem 2rem;
+  margin: 3rem 2rem;
   color: #fff;
   font-weight: 600;
   font-size: 2rem;
   text-decoration: none;
 }
 
+.sidebar__nav-item:hover > .subnav {
+  display: flex;
+}
+
 .sidebar__link {
+  position: relative;
   text-decoration: none;
   color: #fff;
+  font-size: 1.8rem;
+}
+.sidebar__link:hover {
+  text-decoration: underline;
 }
 
 .main {
   padding-top: 10rem;
   padding-left: 250px;
 }
+@media (max-width: 991px) {
+  .main {
+    padding: 7rem 0 5rem;
+  }
+}
 
 .container {
   max-width: 120rem;
-  height: 120rem;
+  height: auto;
   margin: 0 auto;
   padding-left: 5rem;
   padding-right: 5rem;
-  background-color: #837979;
+}
+@media (max-width: 575px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .nav {
-  padding-top: 0.3rem;
+  display: flex;
+  align-items: baseline;
+}
+.nav img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 991px) {
+  .nav {
+    display: none;
+  }
 }
 
 .nav__link {
-  justify-content: left;
-  padding-left: 1rem;
+  padding-left: 2rem;
   text-decoration: none;
   color: #111111;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1rem;
   opacity: 0.7;
   transition: opacity 0.2s linear;
 }
@@ -474,17 +561,195 @@ body {
   top: 50%;
   left: 50%;
   font-size: 10rem;
-  color: #fff;
+  color: #111111;
   text-align: center;
   margin: 0 auto;
 }
 
 .search {
-  height: 100px;
+  display: flex;
+  height: 1.5em;
+}
+@media (max-width: 991px) {
+  .search {
+    display: none;
+  }
 }
 
-.market__name {
-  color: #111111;
+.search__input {
+  min-width: 30rem;
+  font-family: inherit;
+  height: auto;
+  border-radius: 5px;
+  border: 2px #ccc solid;
+}
+.search__input:focus {
+  border-color: #b6abab;
+}
+.search__input::placeholder {
+  opacity: 0.7;
+  font-size: 1.4rem;
+}
+
+.subnav {
+  display: none;
+  flex-direction: column;
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.subnav__link {
   text-decoration: none;
-  font-size: 3rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.subnav__link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  margin-left: 0.3rem;
+  padding: 0.4rem;
+  font-family: inherit;
+  background-color: #ccc;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px 0px rgba(180, 152, 146, 0.3);
+  font-size: 1em;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity, background-color 0.2s linear;
+}
+.btn:hover {
+  opacity: 1;
+  color: #fff;
+  background-color: #b6abab;
+}
+.btn--center {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+
+.form {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.form__group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.form__group--md {
+  margin-bottom: 2.5rem;
+}
+
+.form__control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0 0.75rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #3f3f3f;
+  border-radius: 0;
+  box-shadow: 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #111111;
+}
+.form__control::placeholder {
+  color: rgba(17, 17, 17, 0.4);
+}
+.form__control:focus + .form__line {
+  width: 100%;
+}
+.form__control--textarea {
+  height: 32px;
+  resize: none;
+  overflow: hidden;
+}
+
+.form__line {
+  width: 0;
+  height: 1px;
+  background-color: #b6abab;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: width 0.3s linear;
+}
+
+.form__select {
+  margin-top: 0.5rem;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.form__title {
+  opacity: 0.4;
+  font-size: 1.4rem;
+}
+
+.form__city {
+  font-family: inherit;
+  margin-top: 0.5rem;
+}
+
+.burger {
+  display: none;
+  width: 3rem;
+  height: 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 0;
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+}
+.burger:before, .burger:after,
+.burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+}
+.burger:before, .burger:after {
+  content: "";
+  transition: transform 0.2s linear;
+}
+.burger:before {
+  top: 0;
+}
+.burger:after {
+  bottom: 0;
+}
+.burger span {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s linear;
+}
+.show-sidebar .burger span {
+  opacity: 0;
+}
+.show-sidebar .burger:before, .show-sidebar .burger:after {
+  top: 50%;
+}
+.show-sidebar .burger:before {
+  transform: rotate(45deg);
+}
+.show-sidebar .burger:after {
+  transform: rotate(-45deg);
+}
+@media (max-width: 991px) {
+  .burger {
+    display: block;
+  }
 }

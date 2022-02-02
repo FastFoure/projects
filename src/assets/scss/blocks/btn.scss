@@ -1,0 +1,25 @@
+.btn {
+    margin-left: .3rem;
+    padding: .4rem;
+    font-family: inherit;
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(180, 152, 146, 0.3);
+    font-size: 1em;
+    line-height: 1;
+    opacity: .7;
+    transition: opacity, background-color .2s linear, ;
+
+    &:hover {
+        opacity: 1;
+        color: $white;
+        background-color: rgb(182, 171, 171);
+    }
+
+    &--center {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+}

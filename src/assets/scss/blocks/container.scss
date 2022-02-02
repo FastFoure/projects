@@ -1,8 +1,12 @@
 .container {
     max-width: 120rem;
-    height: 120rem;
+    height: auto;
     margin: 0 auto;
     padding-left: 5rem;
     padding-right: 5rem;
-    background-color: rgb(131, 121, 121);
+
+    @include breakpoint($mobile-bp) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
